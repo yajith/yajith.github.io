@@ -37,7 +37,7 @@ env:
 
 jobs:
   preparation:
-    runs-on: tools01
+    runs-on: ubuntu-latest
     steps:
     - name: 'Startup'
       run: echo "🐧 This job is now running on self-hosted ${{ runner.os }} server"
