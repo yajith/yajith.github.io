@@ -9,7 +9,7 @@ on:
         default: 'Ubuntu-22.04'
         type: choice
         options:
-        - Ubuntu-20.04
+        - builds/linux/ubuntu/20-04-lts
         - Ubuntu-22.04
         - Ubuntu-23.04
         - CentOS-Stream-8
