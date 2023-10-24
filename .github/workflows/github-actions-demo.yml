@@ -48,4 +48,5 @@ jobs:
     - name: List files
       shell: bash
       run: |
-        ls ${{ github.workspace }}
+        ls
+      working-directory: './hansakinkini/
