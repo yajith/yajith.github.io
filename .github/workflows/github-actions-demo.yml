@@ -49,4 +49,4 @@ jobs:
       shell: bash
       run: |
         ls
-      working-directory: './hansakinkini/
+      working-directory: './hansakinkini/'
