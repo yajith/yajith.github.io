@@ -34,13 +34,18 @@ on:
         - '1.29'
 env:
   MY_VAR1: ${{ secrets.BIG_SECRET }}
-  
+
 jobs:
   preparation:
-    runs-on: ubuntu-latest
-    environment: template-builder
+    runs-on: tools01
     steps:
-    - name: 'Print vars'
-      run: echo $MY_VAR1
-    - name: '[Preparation] ENV Initialisation'
-      run: echo "🍏 This job's status is ${{ job.status }}."
+    - name: 'Startup'
+    - run: echo "🐧 This job is now running on self-hosted ${{ runner.os }} server"
+
+    - name: 'Preparation'
+    - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+    - name: Check out repository code
+      uses: actions/checkout@v4
+
+    - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
