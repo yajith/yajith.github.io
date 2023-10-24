@@ -38,6 +38,7 @@ env:
 jobs:
   preparation:
     runs-on: ubuntu-latest
+    environment: template-builder
     steps:
     - name: 'Print vars'
       run: echo $MY_VAR1
