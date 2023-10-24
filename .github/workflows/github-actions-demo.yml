@@ -48,14 +48,16 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v4
 
-    - name: Set a var
+    - name: List files
       shell: bash
       run: |
-        export VAR1=abcd123
+        ls
+      env:
+        SPECIALVAR1: abcd123
       working-directory: './hansakinkini/'
 
     - name: Get a var
       shell: bash
       run: |
-        echo $VAR1
+        echo $SPECIALVAR1
       working-directory: './hansakinkini/'
