@@ -36,5 +36,7 @@ jobs:
   preparation:
     runs-on: ubuntu-latest
     steps:
+    - name: 'Print vars'
+      run: echo "$MYVAR1"
     - name: '[Preparation] ENV Initialisation'
       run: echo "🍏 This job's status is ${{ job.status }}."
