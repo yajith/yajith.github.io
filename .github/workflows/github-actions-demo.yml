@@ -32,11 +32,14 @@ on:
         - '1.27'
         - '1.28'
         - '1.29'
+env:
+  MY_VAR1: ${{ env.MYVAR1 }}
+  
 jobs:
   preparation:
     runs-on: ubuntu-latest
     steps:
     - name: 'Print vars'
-      run: echo ${{ env.MYVAR1 }}
+      run: echo $MY_VAR1
     - name: '[Preparation] ENV Initialisation'
       run: echo "🍏 This job's status is ${{ job.status }}."
