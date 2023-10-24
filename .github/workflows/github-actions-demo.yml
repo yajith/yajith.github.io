@@ -33,7 +33,7 @@ on:
         - '1.28'
         - '1.29'
 env:
-  MY_VAR1: ${{ env.MYVAR1 }}
+  MY_VAR1: ${{ vars.MYVAR1 }}
   
 jobs:
   preparation:
