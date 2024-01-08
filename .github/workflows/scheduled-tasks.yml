@@ -1,28 +1,11 @@
-name: "scheduled-tasks"
+name: GitHub Actions Scheduled Tasks Demo
 on:
   schedule:
     - cron: '*/5 * * * *'
-  workflow_dispatch:
 
 jobs:
-  preperation:
+  test_schedule:
     runs-on: ubuntu-latest
     steps:
-      - name: "[Preparation] ENV Initialisation"
-        shell: bash
-        run: |
-          echo "Starting up"    
-  run-cleanups:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "[Cleanup] ENV Cleanup"
-        shell: bash
-        run: |
-          echo "Running cleanup tasks"  
-  completion:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "[Completion] ENV Completion"
-        shell: bash
-        run: |
-          echo "Notify"
+      - name: Schduled task
+        run: echo "This is a scheduled task"
