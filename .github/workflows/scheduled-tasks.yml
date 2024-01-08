@@ -1,27 +1,27 @@
-# name: "scheduled-tasks"
-# on:
-#   schedule:
-#     - cron: '*/10 * * * *'
+name: "scheduled-tasks"
+on:
+  schedule:
+    - cron: '*/10 * * * *'
 
-# jobs:
-#   preperation:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: "[Preparation] ENV Initialisation"
-#         shell: bash
-#         run: |
-#           echo "Starting up"    
-#   run-cleanups:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: "[Cleanup] ENV Cleanup"
-#         shell: bash
-#         run: |
-#           echo "Running cleanup tasks"  
-#   completion:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: "[Completion] ENV Completion"
-#         shell: bash
-#         run: |
-#           echo "Notify"
+jobs:
+  preperation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "[Preparation] ENV Initialisation"
+        shell: bash
+        run: |
+          echo "Starting up"    
+  run-cleanups:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "[Cleanup] ENV Cleanup"
+        shell: bash
+        run: |
+          echo "Running cleanup tasks"  
+  completion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "[Completion] ENV Completion"
+        shell: bash
+        run: |
+          echo "Notify"
