@@ -51,7 +51,7 @@ jobs:
         run: |
           echo "Running cleanup tasks"          
   completion-remote:
-    needs: [run-remote-cleanups]
+    needs: [run-remote-copy]
     runs-on: ubuntu-latest
     steps:
       - name: "[Completion] ENV Completion"
@@ -59,7 +59,7 @@ jobs:
         run: |
           echo "Notify"
   completion-local:
-    needs: [run-local-cleanups]
+    needs: [run-local-copy]
     runs-on: ubuntu-latest
     steps:
       - name: "[Completion] ENV Completion"
