@@ -1,7 +1,6 @@
 name: "scheduled-tasks"
 on:
-  schedule:
-    - cron: '*/10 * * * *'
+  workflow_dispatch:
 
 jobs:
   preperation:
@@ -12,6 +11,7 @@ jobs:
         run: |
           echo "Starting up"    
   run-cleanups:
+    needs: [preperation]
     runs-on: ubuntu-latest
     steps:
       - name: "[Cleanup] ENV Cleanup"
@@ -19,6 +19,7 @@ jobs:
         run: |
           echo "Running cleanup tasks"  
   completion:
+    needs: [run-cleanups]
     runs-on: ubuntu-latest
     steps:
       - name: "[Completion] ENV Completion"
